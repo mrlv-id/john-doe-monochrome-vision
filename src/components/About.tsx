@@ -1,20 +1,14 @@
 import portraitImage from "@/assets/photographer-portrait.jpg";
 import ScrollReveal from "./ScrollReveal";
-
 const About = () => {
-  return (
-    <section id="about" className="py-24 md:py-32 bg-secondary">
+  return <section id="about" className="py-24 md:py-32 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <ScrollReveal animation="fade-right" duration={800}>
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={portraitImage}
-                  alt="John Doe - Urban Photographer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
+                <img alt="John Doe - Urban Photographer" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/lovable-uploads/c4814abd-0672-4e4f-8fb9-f8c3fec2ae38.jpg" />
               </div>
               {/* Decorative element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-border hidden md:block" />
@@ -73,8 +67,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
