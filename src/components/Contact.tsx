@@ -1,30 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 bg-foreground text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-down" duration={600}>
             <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gray-400 mb-4 sm:mb-6">
-              Get in Touch
+              {t("contact.label")}
             </p>
           </ScrollReveal>
 
           <ScrollReveal animation="slide-up" delay={100} duration={900}>
             <h2 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6 sm:mb-8">
-              Let's create
+              {t("contact.title1")}
               <br />
-              something <span className="italic">together</span>
+              {t("contact.title2")} <span className="italic">{t("contact.title3")}</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal animation="blur" delay={200} duration={800}>
             <p className="font-body text-base sm:text-lg text-gray-400 max-w-xl mx-auto mb-8 sm:mb-12 px-2">
-              Available for commercial projects, editorial work, and art commissions. Based in São
-              Paulo, available worldwide.
+              {t("contact.description")}
             </p>
           </ScrollReveal>
 

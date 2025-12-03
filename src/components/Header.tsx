@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,32 +42,54 @@ const Header = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8 lg:gap-10 font-body text-sm tracking-wide">
-          <li>
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 font-body text-sm tracking-wide">
+          <li className="flex items-center gap-6 lg:gap-8">
             <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">
-              Work
+              {t("nav.work")}
             </a>
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/50 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 uppercase tracking-wider"
+              aria-label="Toggle language"
+            >
+              <span className={language === "en" ? "text-foreground" : "text-muted-foreground/50"}>EN</span>
+              <span className="text-muted-foreground/30">/</span>
+              <span className={language === "pt-BR" ? "text-foreground" : "text-muted-foreground/50"}>PT</span>
+            </button>
           </li>
           <li>
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-              About
+              {t("nav.about")}
             </a>
           </li>
           <li>
             <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+              {t("nav.contact")}
             </a>
           </li>
         </ul>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobileMenu}
-          className="md:hidden z-10 p-2 -mr-2 text-foreground"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2 z-10">
+          {/* Mobile Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1 px-2 py-1 rounded-full border border-border/50 text-[10px] font-medium text-muted-foreground hover:text-foreground transition-all duration-300 uppercase tracking-wider"
+            aria-label="Toggle language"
+          >
+            <span className={language === "en" ? "text-foreground" : "text-muted-foreground/50"}>EN</span>
+            <span className="text-muted-foreground/30">/</span>
+            <span className={language === "pt-BR" ? "text-foreground" : "text-muted-foreground/50"}>PT</span>
+          </button>
+          <button
+            onClick={toggleMobileMenu}
+            className="p-2 -mr-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -81,7 +105,7 @@ const Header = () => {
               onClick={closeMobileMenu}
               className="block text-foreground hover:text-muted-foreground transition-colors py-2"
             >
-              Work
+              {t("nav.work")}
             </a>
           </li>
           <li>
@@ -90,7 +114,7 @@ const Header = () => {
               onClick={closeMobileMenu}
               className="block text-foreground hover:text-muted-foreground transition-colors py-2"
             >
-              About
+              {t("nav.about")}
             </a>
           </li>
           <li>
@@ -99,7 +123,7 @@ const Header = () => {
               onClick={closeMobileMenu}
               className="block text-foreground hover:text-muted-foreground transition-colors py-2"
             >
-              Contact
+              {t("nav.contact")}
             </a>
           </li>
         </ul>
