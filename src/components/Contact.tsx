@@ -4,17 +4,17 @@ import ScrollReveal from "./ScrollReveal";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-foreground text-primary-foreground">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-16 sm:py-24 md:py-32 bg-foreground text-primary-foreground">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-up">
-            <p className="font-body text-sm tracking-[0.3em] uppercase text-gray-400 mb-6">
+            <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gray-400 mb-4 sm:mb-6">
               Get in Touch
             </p>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={100}>
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl tracking-tight mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6 sm:mb-8">
               Let's create
               <br />
               something <span className="italic">together</span>
@@ -22,7 +22,7 @@ const Contact = () => {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={200}>
-            <p className="font-body text-lg text-gray-400 max-w-xl mx-auto mb-12">
+            <p className="font-body text-base sm:text-lg text-gray-400 max-w-xl mx-auto mb-8 sm:mb-12 px-2">
               Available for commercial projects, editorial work, and art commissions. Based in São
               Paulo, available worldwide.
             </p>
@@ -44,7 +44,7 @@ const Contact = () => {
 
           {/* Social Links */}
           <ScrollReveal animation="fade-up" delay={400}>
-            <div className="flex items-center justify-center gap-8 mt-16 font-body text-sm">
+            <div className="flex items-center justify-center gap-4 sm:gap-8 mt-10 sm:mt-16 font-body text-xs sm:text-sm">
               <a
                 href="#"
                 className="text-gray-400 hover:text-primary-foreground transition-colors tracking-wide"
