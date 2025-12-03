@@ -10,31 +10,66 @@ const Hero = () => {
           alt="Urban architectural photography by John Doe"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+        {/* Stronger gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
       </div>
 
       {/* Content */}
       <div className="relative h-full flex flex-col justify-end pb-20 md:pb-32 container mx-auto px-6">
-        <div className="max-w-3xl animate-fade-in-up">
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-gray-400 mb-4">
-            Urban & Minimalist Photography
-          </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight mb-6">
-            Capturing the
-            <br />
-            <span className="italic">silence</span> of cities
+        <div className="max-w-4xl">
+          {/* Tagline with animated line */}
+          <div className="flex items-center gap-4 mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div className="w-12 h-px bg-foreground/60" />
+            <p className="font-body text-sm tracking-[0.4em] uppercase text-foreground/70">
+              Urban & Minimalist Photography
+            </p>
+          </div>
+
+          {/* Main headline with better styling */}
+          <h1 
+            className="font-display text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-medium leading-[0.95] tracking-tight mb-8 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <span className="block">Capturing the</span>
+            <span className="block">
+              <em className="font-normal not-italic relative inline-block">
+                silence
+                <span className="absolute -bottom-2 left-0 w-full h-px bg-foreground/40" />
+              </em>
+              {" "}of cities
+            </span>
           </h1>
-          <p className="font-body text-lg text-muted-foreground max-w-md">
+
+          {/* Description with better contrast */}
+          <p 
+            className="font-body text-base md:text-lg text-foreground/70 max-w-lg leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.6s" }}
+          >
             Finding beauty in geometric forms, shadows, and the quiet moments of urban life.
           </p>
+
+          {/* CTA Button */}
+          <div 
+            className="mt-10 animate-fade-in-up"
+            style={{ animationDelay: "0.8s" }}
+          >
+            <a 
+              href="#work" 
+              className="inline-flex items-center gap-3 font-body text-sm tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors group"
+            >
+              <span>View Portfolio</span>
+              <span className="w-8 h-px bg-foreground/40 group-hover:w-12 transition-all duration-300" />
+            </a>
+          </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in">
-          <span className="font-body text-xs tracking-widest uppercase text-muted-foreground">
+        <div className="absolute bottom-10 right-6 md:right-10 flex flex-col items-center gap-3 animate-fade-in" style={{ animationDelay: "1s" }}>
+          <span className="font-body text-[10px] tracking-[0.3em] uppercase text-foreground/50 rotate-90 origin-center translate-x-4">
             Scroll
           </span>
-          <div className="w-px h-12 bg-gradient-to-b from-foreground to-transparent" />
+          <div className="w-px h-16 bg-gradient-to-b from-foreground/50 to-transparent" />
         </div>
       </div>
     </section>
