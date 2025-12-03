@@ -1,14 +1,20 @@
 import heroImage from "@/assets/hero-urban.jpg";
+import { useParallax } from "@/hooks/useParallax";
 
 const Hero = () => {
+  const parallaxOffset = useParallax(0.4);
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+      {/* Background Image with Parallax */}
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={heroImage}
           alt="Urban architectural photography by John Doe"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover will-change-transform"
+          style={{
+            transform: `translateY(${parallaxOffset}px) scale(1.1)`,
+          }}
         />
         {/* Stronger gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
