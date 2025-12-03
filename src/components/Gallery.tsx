@@ -40,7 +40,7 @@ const Gallery = () => {
       <section id="work" className="py-16 sm:py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           {/* Section Header */}
-          <ScrollReveal animation="fade-up" className="mb-10 sm:mb-16 md:mb-24">
+          <ScrollReveal animation="slide-up" duration={800} className="mb-10 sm:mb-16 md:mb-24">
             <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-3 sm:mb-4">
               Selected Work
             </p>
@@ -54,9 +54,9 @@ const Gallery = () => {
             {photos.map((photo, index) => (
               <ScrollReveal
                 key={index}
-                animation="zoom"
-                delay={index * 100}
-                duration={600}
+                animation="blur"
+                delay={index * 80}
+                duration={800}
                 className={index === 0 || index === 2 ? "sm:row-span-2" : ""}
               >
                 <div

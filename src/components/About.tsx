@@ -5,7 +5,7 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <ScrollReveal animation="fade-right" duration={800}>
+          <ScrollReveal animation="blur" duration={900}>
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden">
                 <img alt="John Doe - Urban Photographer" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/lovable-uploads/c4814abd-0672-4e4f-8fb9-f8c3fec2ae38.jpg" />
@@ -17,7 +17,7 @@ const About = () => {
 
           {/* Content */}
           <div className="lg:pl-8">
-            <ScrollReveal animation="fade-up" delay={100}>
+            <ScrollReveal animation="slide-up" delay={100} duration={800}>
               <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-3 sm:mb-4">
                 About
               </p>
@@ -28,7 +28,7 @@ const About = () => {
               </h2>
             </ScrollReveal>
 
-            <ScrollReveal animation="fade-up" delay={200}>
+            <ScrollReveal animation="fade-up" delay={200} duration={800}>
               <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
                 <p>
                   With over a decade of experience in urban photography, I have dedicated my craft to
@@ -48,7 +48,7 @@ const About = () => {
             </ScrollReveal>
 
             {/* Stats */}
-            <ScrollReveal animation="fade-up" delay={300}>
+            <ScrollReveal animation="zoom" delay={300} duration={700}>
               <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-8 sm:mt-12 pt-8 sm:pt-12 border-t border-border">
                 <div className="text-center sm:text-left">
                   <span className="font-display text-2xl sm:text-3xl md:text-4xl">12+</span>

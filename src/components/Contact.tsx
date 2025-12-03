@@ -7,13 +7,13 @@ const Contact = () => {
     <section id="contact" className="py-16 sm:py-24 md:py-32 bg-foreground text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal animation="fade-up">
+          <ScrollReveal animation="fade-down" duration={600}>
             <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gray-400 mb-4 sm:mb-6">
               Get in Touch
             </p>
           </ScrollReveal>
 
-          <ScrollReveal animation="fade-up" delay={100}>
+          <ScrollReveal animation="slide-up" delay={100} duration={900}>
             <h2 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight mb-6 sm:mb-8">
               Let's create
               <br />
@@ -21,14 +21,14 @@ const Contact = () => {
             </h2>
           </ScrollReveal>
 
-          <ScrollReveal animation="fade-up" delay={200}>
+          <ScrollReveal animation="blur" delay={200} duration={800}>
             <p className="font-body text-base sm:text-lg text-gray-400 max-w-xl mx-auto mb-8 sm:mb-12 px-2">
               Available for commercial projects, editorial work, and art commissions. Based in São
               Paulo, available worldwide.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal animation="zoom" delay={300}>
+          <ScrollReveal animation="zoom-rotate" delay={300} duration={700}>
             <Button
               variant="outline"
               size="lg"
@@ -43,7 +43,7 @@ const Contact = () => {
           </ScrollReveal>
 
           {/* Social Links */}
-          <ScrollReveal animation="fade-up" delay={400}>
+          <ScrollReveal animation="fade-up" delay={400} duration={600}>
             <div className="flex items-center justify-center gap-4 sm:gap-8 mt-10 sm:mt-16 font-body text-xs sm:text-sm">
               <a
                 href="#"
