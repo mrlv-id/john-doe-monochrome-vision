@@ -22,26 +22,26 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex flex-col justify-end pb-20 md:pb-32 container mx-auto px-6">
+      <div className="relative h-full flex flex-col justify-end pb-16 sm:pb-20 md:pb-32 container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl">
           {/* Tagline with animated line */}
-          <div className="flex items-center gap-4 mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <div className="w-12 h-px bg-foreground/60" />
-            <p className="font-body text-sm tracking-[0.4em] uppercase text-foreground/70">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div className="w-8 sm:w-12 h-px bg-foreground/60" />
+            <p className="font-body text-[10px] sm:text-sm tracking-[0.2em] sm:tracking-[0.4em] uppercase text-foreground/70">
               Urban & Minimalist Photography
             </p>
           </div>
 
           {/* Main headline with better styling */}
           <h1 
-            className="font-display text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-medium leading-[0.95] tracking-tight mb-8 animate-fade-in-up"
+            className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-medium leading-[0.95] tracking-tight mb-6 sm:mb-8 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
             <span className="block">Capturing the</span>
             <span className="block">
               <em className="font-normal not-italic relative inline-block">
                 silence
-                <span className="absolute -bottom-2 left-0 w-full h-px bg-foreground/40" />
+                <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-px bg-foreground/40" />
               </em>
               {" "}of cities
             </span>
@@ -49,7 +49,7 @@ const Hero = () => {
 
           {/* Description with better contrast */}
           <p 
-            className="font-body text-base md:text-lg text-foreground/70 max-w-lg leading-relaxed animate-fade-in-up"
+            className="font-body text-sm sm:text-base md:text-lg text-foreground/70 max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.6s" }}
           >
             Finding beauty in geometric forms, shadows, and the quiet moments of urban life.
@@ -57,21 +57,21 @@ const Hero = () => {
 
           {/* CTA Button */}
           <div 
-            className="mt-10 animate-fade-in-up"
+            className="mt-6 sm:mt-10 animate-fade-in-up"
             style={{ animationDelay: "0.8s" }}
           >
             <a 
               href="#work" 
-              className="inline-flex items-center gap-3 font-body text-sm tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors group"
+              className="inline-flex items-center gap-2 sm:gap-3 font-body text-xs sm:text-sm tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors group"
             >
               <span>View Portfolio</span>
-              <span className="w-8 h-px bg-foreground/40 group-hover:w-12 transition-all duration-300" />
+              <span className="w-6 sm:w-8 h-px bg-foreground/40 group-hover:w-10 sm:group-hover:w-12 transition-all duration-300" />
             </a>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 right-6 md:right-10 flex flex-col items-center gap-3 animate-fade-in" style={{ animationDelay: "1s" }}>
+        {/* Scroll indicator - hidden on mobile */}
+        <div className="hidden sm:flex absolute bottom-10 right-6 md:right-10 flex-col items-center gap-3 animate-fade-in" style={{ animationDelay: "1s" }}>
           <span className="font-body text-[10px] tracking-[0.3em] uppercase text-foreground/50 rotate-90 origin-center translate-x-4">
             Scroll
           </span>
