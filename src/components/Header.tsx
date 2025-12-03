@@ -43,11 +43,8 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 font-body text-sm tracking-wide">
-          <li className="flex items-center gap-6 lg:gap-8">
-            <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t("nav.work")}
-            </a>
-            {/* Language Toggle */}
+          {/* Language Toggle */}
+          <li>
             <button
               onClick={toggleLanguage}
               className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/50 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 uppercase tracking-wider"
@@ -57,6 +54,11 @@ const Header = () => {
               <span className="text-muted-foreground/30">/</span>
               <span className={language === "pt-BR" ? "text-foreground" : "text-muted-foreground/50"}>PT</span>
             </button>
+          </li>
+          <li>
+            <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t("nav.work")}
+            </a>
           </li>
           <li>
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
