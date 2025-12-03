@@ -6,6 +6,7 @@ import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import ScrollReveal from "./ScrollReveal";
 import Lightbox from "./Lightbox";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const photos = [
   { src: gallery1, title: "Solitude", category: "Street" },
@@ -19,6 +20,7 @@ const Gallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const { t } = useLanguage();
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -42,10 +44,10 @@ const Gallery = () => {
           {/* Section Header */}
           <ScrollReveal animation="slide-up" duration={800} className="mb-10 sm:mb-16 md:mb-24">
             <p className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-3 sm:mb-4">
-              Selected Work
+              {t("gallery.label")}
             </p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
-              Portfolio
+              {t("gallery.title")}
             </h2>
           </ScrollReveal>
 
@@ -86,7 +88,7 @@ const Gallery = () => {
                       {photo.title}
                     </h3>
                     <span className="mt-4 font-body text-xs tracking-widest uppercase text-primary-foreground/60">
-                      Click to view
+                      {t("gallery.clickToView")}
                     </span>
                   </div>
                 </div>
